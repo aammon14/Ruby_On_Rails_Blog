@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+
+  get 'signup', to: 'users#new'
+
+  resources :users, except: [:new]
+
 end
