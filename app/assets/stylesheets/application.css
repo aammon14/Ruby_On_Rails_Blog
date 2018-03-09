@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+nav {
+  background: red;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+}
+.homebutton {
+  color: red;
+  text-align: center;
+  background: red;
+}
