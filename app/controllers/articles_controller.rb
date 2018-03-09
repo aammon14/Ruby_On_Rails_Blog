@@ -20,8 +20,8 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = User.first
-
     if @article.save
+      flash[:success] = "Article created"
       redirect_to @article
     else
       render 'new'
@@ -30,7 +30,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to @article
     else
@@ -41,12 +40,11 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-
     redirect_to articles_path
   end
 
   private
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :user_id)
     end
 end
