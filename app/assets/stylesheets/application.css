@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: lightgrey;
+}
 nav {
   background: red;
   padding: 10px;
@@ -26,4 +30,24 @@ h1 {
   color: red;
   text-align: center;
   background: red;
+}
+table{
+  border: 1px solid black;
+}
+th {
+  text-align: left;
+  border: 1px solid black;
+  background: red;
+  color: white;
+}
+.artTitle {
+  width: 15%;
+  text-decoration: none;
+  font-weight: bold;
+}
+.artText{
+  width: 40%;
+}
+.artAuthor{
+  width: 10%;
 }

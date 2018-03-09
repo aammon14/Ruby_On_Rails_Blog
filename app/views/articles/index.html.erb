@@ -4,16 +4,16 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Author</th>
   </tr>
 
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td>By: <%= article.user.username if article.user %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
+      <td class='artTitle'><%= link_to article.title, article_path(article) %></td>
+      <td class='artText'><%= article.text %></td>
+      <td class='artAuthor'>By: <%= article.user.username if article.user %></td>
     </tr>
   <% end %>
 </table>
-
+<br>
 <%= link_to 'New article', new_article_path %>
